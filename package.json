@@ -1,0 +1,65 @@
+{
+  "name": "nest-bullmqpro",
+  "version": "1.0.1",
+  "description": "The BullMQ Pro module for [Nest](https://github.com/nestjs/nest).",
+  "homepage": "https://github.com/vinaypugal-gox/nest-bullmqpro#readme",
+  "bugs": {
+    "url": "https://github.com/vinaypugal-gox/nest-bullmqpro/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinaypugal-gox/nest-bullmqpro.git"
+  },
+  "license": "MIT",
+  "author": "vinaypugal-gox <vinay.pugal@gox.ai>",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "copy:license": "cp ../../LICENSE ./",
+    "lint": "TIMING=1 eslint --ignore-path ../../.eslintignore '**/*.ts'",
+    "lint:fix": "npm run lint -- --fix",
+    "prepublishOnly": "npm run build && rm -f dist/*.tsbuildinfo",
+    "test": "jest --coverage --runInBand --detectOpenHandles --logHeapUsage",
+    "test:debug": "node --inspect-brk ../../node_modules/jest/bin/jest --runInBand ---detectOpenHandles --logHeapUsage",
+    "test:watch": "npm run test -- --watch",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@taskforcesh/bullmq-pro": "^5.1.14",
+    "@lerna-lite/cli": "^1.16.0",
+    "@nestjs/common": "^9.3.9",
+    "@nestjs/core": "^9.3.9",
+    "@nestjs/platform-express": "^9.3.9",
+    "@nestjs/testing": "^9.3.9",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.14.5",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "fast-glob": "^3.2.12",
+    "husky": "^8.0.3",
+    "ioredis": "^5.3.1",
+    "jest": "^29.4.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0",
+    "tsc": "^2.0.4",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "turbo": "^1.8.3",
+    "typescript": "^4.9.5",
+    "ulid": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^8.0.0 || ^9.0.0"
+  },
+  "dependencies": {
+    "typescript": "^4.9.5"
+  }
+}
